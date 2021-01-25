@@ -35,7 +35,7 @@ export const ContentQuizSelection = styled.section`
 export const QuizSelectionItem = styled.button`
   background: ${({ theme }) => theme.colors.contrastText};
   color: ${({ theme }) => theme.colors.primary};
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 0.5rem;
 
   display: flex;

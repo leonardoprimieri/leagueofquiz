@@ -7,19 +7,31 @@
       "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_25.jpg",
       "title": "Qual o nome desse campeão?",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": "Graves",
       "alternatives": ["Darius", "Graves", "Xin Zhao", "Zed"]
     },
     {
       "image": "https://d1mt9jmphk9kik.cloudfront.net/teamdignitas/image1578008298.png",
       "title": "Quando um campeão builda AP ele:",
       "description": "Continua fácil",
-      "answer": 2,
+      "answer": "Seu dano é mágico",
       "alternatives": [
         "Faz dano físico",
         "É um lutador",
         "Seu dano é mágico",
         "É muito forte"
+      ]
+    },
+    {
+      "image": "https://senpai.gg/blog/wp-content/uploads/2020/11/3070_Mage_T1_TearoftheGoddess-1.png",
+      "title": "Qual o nome desse item?",
+      "description": "Continua fácil",
+      "answer": "Lágrima da Deusa",
+      "alternatives": [
+        "Lágrima da Deusa",
+        "Gota",
+        "Choro de Mikail",
+        "Gota de Odin"
       ]
     }
   ],

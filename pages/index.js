@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import styled from 'styled-components';
 import QuizArea from '../src/components/QuizArea';
 
@@ -15,6 +17,9 @@ const Container = styled.main`
 export default function Home() {
   return (
     <Container background={db.bg}>
+      <Head>
+        <title>League of Quiz!</title>
+      </Head>
       <QuizArea />
     </Container>
   );
