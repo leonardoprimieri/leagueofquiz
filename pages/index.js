@@ -1,10 +1,19 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import QuizArea from '../src/components/QuizArea';
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import db from '../db.json';
+
+const Container = styled.main`
+  background: url(${({ background }) => background}) no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+`;
 
 export default function Home() {
-  return <Title>My page</Title>
+  return (
+    <Container background={db.bg}>
+      <QuizArea />
+    </Container>
+  );
 }
