@@ -9,26 +9,47 @@ import {
 } from './styles';
 
 import db from '../../../db.json';
+import { useState } from 'react';
+import Button from '../Button';
 
 export default function QuizArea() {
+  const [index, setIndex] = useState(0);
+
+  function handleClick(orientation) {
+    if (orientation === 'next') {
+      setIndex(index + 1);
+    } else {
+      setIndex(index - 1);
+    }
+  }
+
   return (
     <Container>
       <Content>
-        <ContentInfo>
+        {/* <ContentInfo>
           <h1>{db.title}</h1>
           <span>{db.description}</span>
-        </ContentInfo>
+        </ContentInfo> */}
         <ContentQuiz>
-          <h1>Qual é esse champ?</h1>
-          <h3>Essa é pra aquecer</h3>
+          <h1>{db.questions[index].title}</h1>
+          <h3>{db.questions[index].description}</h3>
           <ContentQuizImage>
-            <img src={db.questions[0].image} />
+            <img src={db.questions[index].image} />
           </ContentQuizImage>
           <ContentQuizSelection>
-            <QuizSelectionItem>Zac</QuizSelectionItem>
-            <QuizSelectionItem>Graves</QuizSelectionItem>
-            <QuizSelectionItem>Aurelion Sol</QuizSelectionItem>
-            <QuizSelectionItem>Jax</QuizSelectionItem>
+            {db.questions[index].alternatives.map((alternative) => (
+              <QuizSelectionItem>{alternative}</QuizSelectionItem>
+            ))}
+            <Button handleClick={() => handleClick('previous')} index={index}>
+              Pergunta Anterior
+            </Button>
+            <Button
+              className="next__question"
+              handleClick={() => handleClick('next')}
+              index={index}
+            >
+              Próxima Pergunta
+            </Button>
           </ContentQuizSelection>
         </ContentQuiz>
       </Content>

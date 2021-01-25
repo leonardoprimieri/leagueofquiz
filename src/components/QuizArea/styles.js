@@ -43,6 +43,7 @@ export const QuizSelectionItem = styled.button`
   align-items: center;
   cursor: pointer;
   width: 100%;
+  max-width: 20rem;
   transition: all 400ms ease;
   font-weight: bold;
   border: 0;
@@ -62,8 +63,10 @@ export const ContentQuizImage = styled.div`
 
   img {
     border-radius: 0.5rem;
-    width: 100%;
-    height: auto;
+    width: 34rem;
+    height: 21rem;
+    object-fit: cover;
+
     border: 2px solid ${({ theme }) => theme.colors.secondary};
   }
 `;
