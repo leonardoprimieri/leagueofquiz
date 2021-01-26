@@ -3,8 +3,6 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import QuizArea from '../src/components/QuizArea';
 
-import db from '../db.json';
-
 const Container = styled.main`
   background: url(${({ background }) => background}) no-repeat;
   background-size: cover;
@@ -16,7 +14,9 @@ const Container = styled.main`
 
 export default function Home() {
   return (
-    <Container background={db.bg}>
+    <Container
+      background={'https://images4.alphacoders.com/600/thumb-1920-600528.png'}
+    >
       <Head>
         <title>League of Quiz!</title>
       </Head>
