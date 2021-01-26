@@ -9,13 +9,16 @@ import {
 } from './styles';
 
 import db from '../../../db.json';
-import { useCallback, useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from '../Button';
 
 export default function QuizArea() {
   const [index, setIndex] = useState(0);
 
   const [response, setResponse] = useState();
+
+  const [red, setRed] = useState();
+  const [green, setGreen] = useState();
 
   function handleClick(orientation) {
     if (orientation === 'next') {
@@ -31,11 +34,14 @@ export default function QuizArea() {
         setIndex(index - 1);
       }
     }
+    setGreen('');
+    setRed('');
   }
 
   function handleAlternativeClick({ target }) {
     setResponse(target.innerText);
-
+    setGreen('#44bd32');
+    setRed('#e84118');
     setTimeout(() => {
       handleClick('next');
     }, 1000);
@@ -57,8 +63,16 @@ export default function QuizArea() {
             <img src={db.questions[index].image} />
           </ContentQuizImage>
           <ContentQuizSelection>
-            {db.questions[index].alternatives.map((alternative, index) => (
-              <QuizSelectionItem key={index} onClick={handleAlternativeClick}>
+            {db.questions[index].alternatives.map((alternative, id) => (
+              <QuizSelectionItem
+                key={id}
+                onClick={handleAlternativeClick}
+                style={
+                  db.questions[index].answer === alternative
+                    ? { background: green }
+                    : { background: red }
+                }
+              >
                 {alternative}
               </QuizSelectionItem>
             ))}
