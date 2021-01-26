@@ -9,7 +9,6 @@ const Container = styled.main`
   display: flex;
 
   height: 100vh;
-  background-position: 370px -55px;
 `;
 
 export default function Home() {

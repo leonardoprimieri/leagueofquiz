@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.aside`
   background: ${({ theme }) => theme.colors.primary};
   width: 40rem;
-
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -16,6 +15,9 @@ export const Content = styled.div``;
 
 export const ContentInfo = styled.div`
   margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const ContentQuiz = styled.div`
@@ -63,8 +65,8 @@ export const ContentQuizImage = styled.div`
 
   img {
     border-radius: 0.5rem;
-    width: 34rem;
-    height: 21rem;
+    width: 100%;
+    height: auto;
     object-fit: cover;
 
     border: 2px solid ${({ theme }) => theme.colors.secondary};
@@ -78,14 +80,4 @@ export const RightContainer = styled.section`
   flex-direction: column;
   color: white;
   width: 100%;
-`;
-
-export const RightContainerContent = styled.section`
-  background: ${({ theme }) => theme.colors.primary};
-  padding: 2rem;
-  border-radius: 0.5rem;
-  h1,
-  span {
-    margin: 1rem;
-  }
 `;

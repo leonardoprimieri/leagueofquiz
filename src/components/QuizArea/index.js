@@ -6,8 +6,6 @@ import {
   ContentQuizSelection,
   QuizSelectionItem,
   ContentQuizImage,
-  RightContainer,
-  RightContainerContent,
 } from './styles';
 
 import db from '../../../db.json';
@@ -62,6 +60,9 @@ export default function QuizArea() {
             <h1>
               {index + 1} / {db.questions.length}
             </h1>
+            <span>
+              Você acertou {rightCount} de {db.questions.length}
+            </span>
           </ContentInfo>
           {index === db.questions.length && alert('acabou')}
           <ContentQuiz>
@@ -98,14 +99,6 @@ export default function QuizArea() {
           </ContentQuiz>
         </Content>
       </Container>
-      <RightContainer>
-        <RightContainerContent>
-          <h1>Essa é sua pontuação:</h1>
-          <span>
-            Você acertou {rightCount} de {db.questions.length}
-          </span>
-        </RightContainerContent>
-      </RightContainer>
     </>
   );
 }
