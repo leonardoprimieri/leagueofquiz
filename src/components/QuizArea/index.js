@@ -6,6 +6,8 @@ import {
   ContentQuizSelection,
   QuizSelectionItem,
   ContentQuizImage,
+  RightContainer,
+  RightContainerContent,
 } from './styles';
 
 import db from '../../../db.json';
@@ -15,10 +17,9 @@ import Button from '../Button';
 export default function QuizArea() {
   const [index, setIndex] = useState(0);
 
-  const [response, setResponse] = useState();
-
   const [red, setRed] = useState();
   const [green, setGreen] = useState();
+  const [rightCount, setRightCount] = useState(0);
 
   function handleClick(orientation) {
     if (orientation === 'next') {
@@ -39,7 +40,13 @@ export default function QuizArea() {
   }
 
   function handleAlternativeClick({ target }) {
-    setResponse(target.innerText);
+    if (
+      db.questions[index].answer === target.innerText &&
+      rightCount < db.questions.length
+    ) {
+      setRightCount(rightCount + 1);
+    }
+
     setGreen('#44bd32');
     setRed('#e84118');
     setTimeout(() => {
@@ -48,47 +55,57 @@ export default function QuizArea() {
   }
 
   return (
-    <Container>
-      <Content>
-        <ContentInfo>
-          <h1>
-            {index + 1} / {db.questions.length}
-          </h1>
-        </ContentInfo>
-
-        <ContentQuiz>
-          <h1>{db.questions[index].title}</h1>
-          <h3>{db.questions[index].description}</h3>
-          <ContentQuizImage>
-            <img src={db.questions[index].image} />
-          </ContentQuizImage>
-          <ContentQuizSelection>
-            {db.questions[index].alternatives.map((alternative, id) => (
-              <QuizSelectionItem
-                key={id}
-                onClick={handleAlternativeClick}
-                style={
-                  db.questions[index].answer === alternative
-                    ? { background: green }
-                    : { background: red }
-                }
+    <>
+      <Container>
+        <Content>
+          <ContentInfo>
+            <h1>
+              {index + 1} / {db.questions.length}
+            </h1>
+          </ContentInfo>
+          {index === db.questions.length && alert('acabou')}
+          <ContentQuiz>
+            <h1>{db.questions[index].title}</h1>
+            <h3>{db.questions[index].description}</h3>
+            <ContentQuizImage>
+              <img src={db.questions[index].image} />
+            </ContentQuizImage>
+            <ContentQuizSelection>
+              {db.questions[index].alternatives.map((alternative, id) => (
+                <QuizSelectionItem
+                  key={id}
+                  onClick={handleAlternativeClick}
+                  style={
+                    db.questions[index].answer === alternative
+                      ? { background: green }
+                      : { background: red }
+                  }
+                >
+                  {alternative}
+                </QuizSelectionItem>
+              ))}
+              <Button handleClick={() => handleClick('previous')} index={index}>
+                Pergunta Anterior
+              </Button>
+              <Button
+                className="next__question"
+                handleClick={() => handleClick('next')}
+                index={index}
               >
-                {alternative}
-              </QuizSelectionItem>
-            ))}
-            <Button handleClick={() => handleClick('previous')} index={index}>
-              Pergunta Anterior
-            </Button>
-            <Button
-              className="next__question"
-              handleClick={() => handleClick('next')}
-              index={index}
-            >
-              Próxima Pergunta
-            </Button>
-          </ContentQuizSelection>
-        </ContentQuiz>
-      </Content>
-    </Container>
+                Próxima Pergunta
+              </Button>
+            </ContentQuizSelection>
+          </ContentQuiz>
+        </Content>
+      </Container>
+      <RightContainer>
+        <RightContainerContent>
+          <h1>Essa é sua pontuação:</h1>
+          <span>
+            Você acertou {rightCount} de {db.questions.length}
+          </span>
+        </RightContainerContent>
+      </RightContainer>
+    </>
   );
 }

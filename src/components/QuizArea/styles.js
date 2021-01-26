@@ -70,3 +70,22 @@ export const ContentQuizImage = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.secondary};
   }
 `;
+
+export const RightContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+`;
+
+export const RightContainerContent = styled.section`
+  background: ${({ theme }) => theme.colors.primary};
+  padding: 2rem;
+  border-radius: 0.5rem;
+  h1,
+  span {
+    margin: 1rem;
+  }
+`;

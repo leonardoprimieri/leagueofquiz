@@ -11,6 +11,7 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.contrastText};
     font-weight: bold;
+    font-size: 1rem;
     transition: all 400ms ease;
 
     &.next__question {
