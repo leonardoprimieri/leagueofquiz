@@ -65,8 +65,8 @@ export const ContentQuizImage = styled.div`
 
   img {
     border-radius: 0.5rem;
-    width: 100%;
-    height: auto;
+    width: 36rem;
+    height: 20rem;
     object-fit: cover;
 
     border: 2px solid ${({ theme }) => theme.colors.secondary};

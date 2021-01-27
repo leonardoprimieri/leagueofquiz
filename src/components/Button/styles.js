@@ -19,7 +19,8 @@ export const Container = styled.div`
       border: 1px solid ${({ theme }) => theme.colors.secondary};
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: ${({ theme }) => theme.colors.contrastText};
       color: ${({ theme }) => theme.colors.primary};
       border: 0;

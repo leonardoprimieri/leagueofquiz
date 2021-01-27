@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Container,
   Content,
@@ -9,12 +10,10 @@ import {
 } from './styles';
 
 import db from '../../../db.json';
-import { useState } from 'react';
 import Button from '../Button';
 
 export default function QuizArea() {
   const [index, setIndex] = useState(0);
-
   const [red, setRed] = useState();
   const [green, setGreen] = useState();
   const [rightCount, setRightCount] = useState(0);
@@ -26,12 +25,10 @@ export default function QuizArea() {
       } else {
         setIndex(db.questions.length - 1);
       }
+    } else if (index === 0) {
+      setIndex(0);
     } else {
-      if (index === 0) {
-        setIndex(0);
-      } else {
-        setIndex(index - 1);
-      }
+      setIndex(index - 1);
     }
     setGreen('');
     setRed('');
