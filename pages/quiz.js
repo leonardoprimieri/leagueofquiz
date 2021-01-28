@@ -18,6 +18,10 @@ export const Container = styled.aside`
   color: ${({ theme }) => theme.colors.contrastText};
   padding: 1rem;
   height: 200vh;
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 export const Content = styled.div`

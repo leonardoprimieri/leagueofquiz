@@ -23,6 +23,10 @@ export const Content = styled.section`
   border-radius: 0.5rem;
 
   color: black;
+
+  @media (max-width: 770px) {
+    width: 80%;
+  }
 `;
 
 export const ContentImage = styled.section`
@@ -39,4 +43,8 @@ export const ContentImage = styled.section`
   align-items: center;
   flex-direction: column;
   padding: 1rem;
+
+  a {
+    margin-top: 10rem;
+  }
 `;
