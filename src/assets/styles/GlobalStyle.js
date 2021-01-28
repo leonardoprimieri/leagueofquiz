@@ -10,5 +10,43 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     overflow-y: hidden;
+    background-image: url('https://images4.alphacoders.com/600/thumb-1920-600528.png') ;
+    background-size: cover;
   }
+
+  a {
+    text-decoration:none;
+    color:inherit;
+  }
+
+  .animeLeft {
+    animation: animeLeft 400ms forwards;
+  }
+
+  @keyframes animeLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-10rem);
+    } to {
+      opacity: initial;
+      transform: initial;
+    }
+  }
+
+  .animeTop {
+    animation: animeTop 400ms forwards;
+  }
+
+
+  @keyframes animeTop {
+    from {
+      opacity: 0;
+      transform: translateY(-10rem);
+    } to {
+      opacity: initial;
+      transform: initial;
+    }
+  }
+
+
 `;
