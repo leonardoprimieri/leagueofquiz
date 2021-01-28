@@ -48,5 +48,18 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  html {
+    @media (max-width: 640px) {
+      font-size: 90%;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 80%;
+    }
+    @media (max-width: 515px) {
+      font-size: 70%;
+    }
+  }
+
 
 `;

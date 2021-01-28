@@ -17,7 +17,7 @@ export const Container = styled.aside`
 
   color: ${({ theme }) => theme.colors.contrastText};
   padding: 1rem;
-  height: 100vh;
+  height: 200vh;
 `;
 
 export const Content = styled.div`
@@ -147,7 +147,9 @@ export default function QuizArea() {
   return (
     <>
       <Container className="animeLeft">
-        {modalVisible && <Modal rightCount={rightCount} />}
+        {modalVisible && (
+          <Modal rightCount={rightCount} totalQuestions={db.questions.length} />
+        )}
         <Head>
           <title>Quiz - LOQ</title>
         </Head>
@@ -183,7 +185,7 @@ export default function QuizArea() {
                   {alternative}
                 </QuizSelectionItem>
               ))}
-              <Button handleClick={() => handleClick('previous')} index={index}>
+              {/* <Button handleClick={() => handleClick('previous')} index={index}>
                 Pergunta Anterior
               </Button>
               <Button
@@ -195,7 +197,7 @@ export default function QuizArea() {
                 {index === db.questions.length - 1
                   ? 'Ver Resultado'
                   : 'Próxima Pergunta'}
-              </Button>
+              </Button> */}
             </ContentQuizSelection>
           </ContentQuiz>
         </Content>
