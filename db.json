@@ -33,6 +33,20 @@
         "Choro de Mikail",
         "Gota de Odin"
       ]
+    },
+    {
+      "image": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayle_3.jpg",
+      "title": "Quem é a irmã da Kayle?",
+      "description": "Disconnect hehe",
+      "answer": "Morgana",
+      "alternatives": ["Cassiopeia", "Katarina", "Morgana", "Illaoi"]
+    },
+    {
+      "image": "https://images.contentstack.io/v3/assets/blta38dcaae86f2ef5c/bltc0c2a09b1a318ba6/5e85225b1095fd3156d55a18/greenglade-lookout.jpg",
+      "title": "Qual dessas opções não é o nome verdadeiro de um campeão?",
+      "description": "Agora ta ficando hard",
+      "answer": "Okin Syndra",
+      "alternatives": ["Tobias Fox", "Khada Jhin", "Xan Irelia", "Okin Syndra"]
     }
   ],
   "external": [""],

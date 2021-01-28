@@ -5,6 +5,7 @@ export default function Button({
   handleClick,
   index,
   type,
+  awnsered,
   ...props
 }) {
   function handleButtonClick() {
@@ -14,6 +15,7 @@ export default function Button({
   return (
     <Container>
       <button
+        style={awnsered === '' ? { pointerEvents: 'none' } : {}}
         {...props}
         onClick={type !== 'submit' ? handleButtonClick : undefined}
       >

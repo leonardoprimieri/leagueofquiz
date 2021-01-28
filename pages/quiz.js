@@ -41,7 +41,7 @@ export const ContentInfo = styled.div`
 `;
 
 export const ContentQuiz = styled.div`
-  h3 {
+  h4 {
     margin: 1rem 0;
     color: ${({ theme }) => theme.colors.secondary};
   }
@@ -104,13 +104,13 @@ export const RightContainer = styled.section`
 
 export default function QuizArea() {
   const [index, setIndex] = useState(0);
-  const [redColor, setredColor] = useState();
-  const [greenColor, setgreenColor] = useState();
+  const [redColor, setredColor] = useState('');
+  const [greenColor, setgreenColor] = useState('');
   const [rightCount, setRightCount] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
 
   function handleClick(orientation) {
-    if (index === db.questions.length - 1) {
+    if (index === db.questions.length - 1 && orientation === 'next') {
       setModalVisible(true);
     }
 
@@ -164,8 +164,8 @@ export default function QuizArea() {
           </ContentInfo>
           {index === db.questions.length && alert('acabou')}
           <ContentQuiz>
-            <h1>{db.questions[index].title}</h1>
-            <h3>{db.questions[index].description}</h3>
+            <span>{db.questions[index].title}</span>
+            <h4>{db.questions[index].description}</h4>
             <ContentQuizImage>
               <img src={db.questions[index].image} />
             </ContentQuizImage>
@@ -190,6 +190,7 @@ export default function QuizArea() {
                 className="next__question"
                 handleClick={() => handleClick('next')}
                 index={index}
+                awnsered={redColor}
               >
                 {index === db.questions.length - 1
                   ? 'Ver Resultado'
