@@ -56,9 +56,14 @@ export const GlobalStyle = createGlobalStyle`
     @media (max-width: 576px) {
       font-size: 80%;
     }
+
     @media (max-width: 515px) {
       font-size: 70%;
     }
+    @media (max-width: 415px) {
+      font-size: 60%;
+    }
+
   }
 
 

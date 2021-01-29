@@ -7,7 +7,7 @@ export default function Input({ id, label, setName, ...props }) {
         {...props}
         id={id}
         onChange={({ target }) => setName(target.value)}
-        maxLength={10}
+        maxLength={20}
       />
     </Container>
   );

@@ -19,7 +19,6 @@ export const Content = styled.section`
 
   background: aliceblue;
   width: 50%;
-  height: 50%;
   border-radius: 0.5rem;
 
   color: black;
@@ -30,21 +29,41 @@ export const Content = styled.section`
 `;
 
 export const ContentImage = styled.section`
-  border-radius: 0.5rem;
-  background-image: url(${(props) => props.background});
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  color: white;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+`;
+
+export const WinsInfo = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
   padding: 1rem;
 
+  h1 {
+    font-size: 1.3rem;
+  }
+
   a {
-    margin-top: 10rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: ${({ theme }) => theme.colors.secondary};
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: aliceblue;
+    svg {
+      margin-right: 1rem;
+    }
   }
 `;

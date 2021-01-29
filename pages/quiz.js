@@ -89,7 +89,8 @@ export const ContentQuizImage = styled.div`
 
   img {
     border-radius: 0.5rem;
-    width: 36rem;
+    width: 100%;
+    min-width: 36rem;
     height: 20rem;
     object-fit: cover;
 
