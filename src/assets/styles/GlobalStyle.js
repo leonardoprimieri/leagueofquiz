@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    overflow-y: hidden;
     background-image: url('https://images4.alphacoders.com/600/thumb-1920-600528.png') ;
     background-size: cover;
   }
