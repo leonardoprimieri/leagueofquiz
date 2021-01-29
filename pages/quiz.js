@@ -74,11 +74,6 @@ export const QuizSelectionItem = styled.button`
   font-weight: bold;
   border: 0;
   font-size: 1.1rem;
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.secondary};
-    color: ${({ theme }) => theme.colors.contrastText};
-  }
 `;
 
 export const ContentQuizImage = styled.div`

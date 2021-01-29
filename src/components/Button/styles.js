@@ -18,12 +18,5 @@ export const Container = styled.div`
       background: transparent;
       border: 1px solid ${({ theme }) => theme.colors.secondary};
     }
-
-    &:hover,
-    &:focus {
-      background: ${({ theme }) => theme.colors.contrastText};
-      color: ${({ theme }) => theme.colors.primary};
-      border: 0;
-    }
   }
 `;
